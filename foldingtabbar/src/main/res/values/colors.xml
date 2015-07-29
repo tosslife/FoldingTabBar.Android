@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="white">#FFFFFFFF</color>
+    <color name="background_color">#FF5E5B94</color>
+    <color name="tabbar_main">#FF4AD5BC</color>
+    <color name="tabbar_secondly">#FF54B4B4</color>
+
+</resources>

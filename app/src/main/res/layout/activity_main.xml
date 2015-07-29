@@ -1,0 +1,31 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color" >
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="50dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/page0"
+        android:scaleType="centerCrop"
+        android:layout_above="@+id/tabBarAnimView"/>
+
+    <View
+        android:id="@+id/groundView"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:background="@drawable/back_oval"
+        android:visibility="invisible" />
+
+    <com.srx.widget.TabBarView
+        android:id="@+id/tabBarAnimView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_alignParentBottom="true" />
+
+</RelativeLayout>
