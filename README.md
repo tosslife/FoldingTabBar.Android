@@ -1,6 +1,6 @@
 # FoldingTabBar.Android
 
-Folding Tab Bar and Tab Bar Controller
+Folding Tab Bar and Tab Bar Menu For Android 
 
 Inspired by [this project on Dribbble](https://dribbble.com/shots/2003376-Tab-Bar-Animation)
 
