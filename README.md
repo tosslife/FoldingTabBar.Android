@@ -6,7 +6,7 @@ Inspired by [this project on Dribbble](https://dribbble.com/shots/2003376-Tab-Ba
 
 # Simple Apk 
 
-![Apk Download](https://github.com/tosslife/FoldingTabBar.Android/releases/download/1.0.0/app-simple.apk)
+[Apk Download](https://github.com/tosslife/FoldingTabBar.Android/releases/download/1.0.0/app-simple.apk)
 
 # Screenshot
 -------------------------
