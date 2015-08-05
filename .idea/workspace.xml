@@ -8,13 +8,6 @@
   <component name="ChangeListManager">
     <list default="true" id="40f8e5b0-f420-4fe8-8f72-ac74e2c89de8" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/foldingtabbar/src/main/java/com/srx/widget/TabBarView.java" afterPath="$PROJECT_DIR$/foldingtabbar/src/main/java/com/srx/widget/TabBarView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/foldingtabbar/src/main/java/com/srx/widget/TabMainView.java" afterPath="$PROJECT_DIR$/foldingtabbar/src/main/java/com/srx/widget/TabMainView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/foldingtabbar/build.gradle" afterPath="$PROJECT_DIR$/foldingtabbar/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/foldingtabbar/foldingtabbar.iml" afterPath="$PROJECT_DIR$/foldingtabbar/foldingtabbar.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="FoldingTabBar.Android.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -118,8 +111,8 @@
       <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="2.3490136">
-              <caret line="86" column="9" selection-start-line="86" selection-start-column="9" selection-end-line="86" selection-end-column="9" />
+            <state vertical-scroll-proportion="2.45827">
+              <caret line="93" column="0" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -2806,8 +2799,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.3490136">
-          <caret line="86" column="9" selection-start-line="86" selection-start-column="9" selection-end-line="86" selection-end-column="9" />
+        <state vertical-scroll-proportion="2.45827">
+          <caret line="93" column="0" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
           <folding />
         </state>
       </provider>
