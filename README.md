@@ -33,7 +33,7 @@ add in build.gradle:
 ````
 ### Xml
 
-After adding the gradle dependencies from above you can go to your xml layout and add the following code for a PullToLoadView:
+After adding the gradle dependencies from above you can go to your xml layout and add the following code for a TabBarView:
 
 ````
          <com.srx.widget.TabBarView
