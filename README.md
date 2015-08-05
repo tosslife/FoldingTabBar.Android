@@ -28,8 +28,8 @@ Inspired by [this project on Dribbble](https://dribbble.com/shots/2003376-Tab-Ba
 add in build.gradle:
 
 ````
+        //Wait bintray audit ...
         compile 'com.github.tosslife:foldingtabbar:1.0.0'
-
 ````
 ### Xml
 
