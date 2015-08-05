@@ -167,9 +167,7 @@ public class TabMainView extends View {
 		invalidate();
 	}
 
-	/**
-	 * 动画控制区
-	 */
+
 	private Animation animation = new Animation() {
 
 		@Override
@@ -203,16 +201,10 @@ public class TabMainView extends View {
 		}
 	};
 
-	/**
-	 * 获取动画时长
-	 */
 	public long getDuration() {
 		return durationMillis;
 	}
 
-	/**
-	 * 动画监听器
-	 */
 	private AnimationListener animListener = new AnimationListener() {
 
 		@Override
@@ -236,9 +228,6 @@ public class TabMainView extends View {
 		}
 	};
 
-	/**
-	 * 动画监听器
-	 */
 	private AnimationListener rotateAnimListener = new AnimationListener() {
 
 		@Override
@@ -269,9 +258,7 @@ public class TabMainView extends View {
 		initAnimation();
 	}
 
-	/**
-	 * 初始化画笔
-	 */
+
 	private void initPaint() {
 		colors[0] = getResources().getColor(R.color.tabbar_main);
 		colors[1] = getResources().getColor(R.color.tabbar_secondly);
@@ -283,9 +270,7 @@ public class TabMainView extends View {
 		paintFlagsDrawFilter = new PaintFlagsDrawFilter(0, Paint.ANTI_ALIAS_FLAG | Paint.FILTER_BITMAP_FLAG);
 	}
 
-	/**
-	 * 初始化长度
-	 */
+
 	private void initLength() {
 		DisplayMetrics dm = new DisplayMetrics();
 		((WindowManager) getContext().getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getMetrics(dm);
@@ -311,9 +296,7 @@ public class TabMainView extends View {
 		setLayoutParams(new RelativeLayout.LayoutParams(width, height));
 	}
 
-	/**
-	 * 初始化动画
-	 */
+
 	private void initAnimation() {
 		decelerateInterpolator = new DecelerateInterpolator(2f);
 		overshootInterpolator = new OvershootInterpolator(1.0f);
@@ -376,9 +359,7 @@ public class TabMainView extends View {
 		super.onDraw(canvas);
 	}
 
-	/**
-	 * 绘制图标
-	 */
+
 	private void drawIcon(Bitmap bitmap, Canvas canvas, float radius, float pointX, float degrees, int position) {
 		canvas.save();
 		if (position == sizePosition)
@@ -389,9 +370,7 @@ public class TabMainView extends View {
 		canvas.restore();
 	}
 
-	/**
-	 * 点击按钮
-	 */
+
 	public void onClick(int position) {
 		if (position < 10) {
 			if (position != 2)
@@ -401,9 +380,6 @@ public class TabMainView extends View {
 		}
 	}
 
-	/**
-	 * 初始化点击位置
-	 */
 	public void initPosition(int position) {
 		if (position < 10 && position != 2)
 			this.position = position;

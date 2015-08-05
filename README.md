@@ -11,3 +11,81 @@ Inspired by [this project on Dribbble](https://dribbble.com/shots/2003376-Tab-Ba
 # Screenshot
 -------------------------
 ![screenshot](https://github.com/tosslife/FoldingTabBar.Android/blob/master/simple.gif)
+
+
+
+# How to use (参考MainActivity)
+-------------------------
+
+### Gradle
+
+add in build.gradle:
+
+```groovy
+
+compile 'com.github.tosslife:pullloadview:1.1.0'
+
+```
+### Xml
+
+After adding the gradle dependencies from above you can go to your xml layout and add the following code for a PullToLoadView:
+
+```
+         <com.srx.widget.TabBarView
+            android:id="@+id/tabBarView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true" />
+```
+
+### Java
+
+To set some basic settings use the following java-code:
+
+```
+       //获取TabBarView
+       TabBarView tabBarView = (TabBarView) findViewById(R.id.tabBarView);
+
+       //设置主按钮图标
+       tabBarAnimView.setMainBitmap(R.drawable.icon_main);
+
+       //设置菜单对应位置按钮图标及两侧图标
+       tabBarAnimView.bindBtnsForPage(0, R.drawable.icon_menu, R.drawable.icon_left, R.drawable.icon_right);
+
+       //设置初始默认选中
+       tabBarAnimView.initializePage(0);
+
+       //添加监听
+        tabBarAnimView.setOnTabBarClickListener(onTabBarClickListener);
+
+       //监听回调
+       private OnTabBarClickListener onTabBarClickListener = new OnTabBarClickListener() {
+
+               @Override
+               public void onMainBtnsClick(int position, int[] clickLocation) {
+                    //点击菜单
+               }
+
+               @Override
+               public void onMainBtnsClick(int position) {
+                    //点击菜单
+               }
+
+               @Override
+               public void onLeftBtnClick(int page) {
+                    //点击对应菜单的左侧按钮
+               }
+
+               @Override
+               public void onRightBtnClick(int page) {
+                    //点击对应菜单的右侧按钮
+               }
+
+           };
+
+
+       //
+```
+
+
+

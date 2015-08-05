@@ -12,7 +12,7 @@ import java.util.HashMap;
 
 public class TabBarView extends RelativeLayout implements View.OnClickListener, View.OnTouchListener {
 
-	private TabMainView tabBackview;
+	private TabMainView tabBackView;
 	private View secondlyFirstIV;
 	private View secondlySecondIV;
 	private View views[] = new View[5];
@@ -43,7 +43,7 @@ public class TabBarView extends RelativeLayout implements View.OnClickListener, 
 	}
 
 	private void initView() {
-		tabBackview = (TabMainView) findViewById(R.id.tabBackView);
+		tabBackView = (TabMainView) findViewById(R.id.tabBackView);
 		views[0] = findViewById(R.id.firstIV);
 		views[1] = findViewById(R.id.secondIV);
 		views[2] = findViewById(R.id.centerIV);
@@ -68,7 +68,7 @@ public class TabBarView extends RelativeLayout implements View.OnClickListener, 
 		secondlySecondIV.setOnTouchListener(this);
 		secondlyFirstIV.setOnClickListener(this);
 		secondlySecondIV.setOnClickListener(this);
-		tabBackview.setOnAnimationEndListener(onAnimationEndListener);
+		tabBackView.setOnAnimationEndListener(onAnimationEndListener);
 	}
 
 	private void initClickable(boolean clickable) {
@@ -84,9 +84,9 @@ public class TabBarView extends RelativeLayout implements View.OnClickListener, 
 	public boolean onTouch(View v, MotionEvent event) {
 		int position = (Integer) v.getTag();
 		if (event.getAction() == MotionEvent.ACTION_DOWN) {
-			tabBackview.onDown(position);
+			tabBackView.onDown(position);
 		} else if (event.getAction() == MotionEvent.ACTION_UP) {
-			tabBackview.onUp(position);
+			tabBackView.onUp(position);
 		}
 		return false;
 	}
@@ -112,7 +112,7 @@ public class TabBarView extends RelativeLayout implements View.OnClickListener, 
 				}
                 changeLeftRightIcon(page);
 			}
-			tabBackview.onClick(position);
+			tabBackView.onClick(position);
 		} else {
 			clickable = true;
 			if (onTabBarClickListener != null) {
@@ -126,23 +126,17 @@ public class TabBarView extends RelativeLayout implements View.OnClickListener, 
 
 	public void initializePage(int page) {
 		this.page = page;
-		tabBackview.initPosition(page);
+		tabBackView.initPosition(page);
 		changeLeftRightIcon(page);
 	}
 
-	/**
-	 * 改变左右图标
-	 */
 	private void changeLeftRightIcon(int position) {
 		setSecondlyFirstBitmap(btnsMap.get(position + "left"));
 		setSecondlySecondBitmap(btnsMap.get(position + "right"));
 	}
 
-	/**
-	 * 绑定按钮
-	 */
 	public void bindBtnsForPage(int page, int menuBitmapId, int leftBitmapId, int rightBitmapId) {
-		tabBackview.setMenuBitmaps(page, menuBitmapId);
+		tabBackView.setMenuBitmaps(page, menuBitmapId);
 		btnsMap.put(page + "left", leftBitmapId);
 		btnsMap.put(page + "right", rightBitmapId);
 		if (this.page != page) {
@@ -151,16 +145,16 @@ public class TabBarView extends RelativeLayout implements View.OnClickListener, 
 	}
 
 	public void setMainBitmap(int mainBitmap) {
-		tabBackview.setMainBtnBitmap(mainBitmap);
+		tabBackView.setMainBtnBitmap(mainBitmap);
 	}
 
 	public void setSecondlyFirstBitmap(int secondlyFirstBitmap) {
-		tabBackview.setLeftBtnBitmap(secondlyFirstBitmap);
+		tabBackView.setLeftBtnBitmap(secondlyFirstBitmap);
 		secondlyFirstIV.setVisibility(secondlyFirstBitmap != 0 ? View.VISIBLE : View.GONE);
 	}
 
 	public void setSecondlySecondBitmap(int secondlySecondBitmap) {
-		tabBackview.setRightBtnBitmap(secondlySecondBitmap);
+		tabBackView.setRightBtnBitmap(secondlySecondBitmap);
 		secondlySecondIV.setVisibility(secondlySecondBitmap != 0 ? View.VISIBLE : View.GONE);
 	}
 

@@ -1,15 +1,26 @@
 apply plugin: 'com.android.library'
 
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.jfrog.bintray'
+
+version = "1.0.0"
+
 android {
     compileSdkVersion 22
     buildToolsVersion "22.0.1"
+    resourcePrefix "tabbarview_"
 
     defaultConfig {
         minSdkVersion 15
         targetSdkVersion 22
         versionCode 1
-        versionName "1.0"
+        versionName "1.0.0"
     }
+
+    lintOptions {
+        abortOnError false
+    }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -21,4 +32,87 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:22.2.0'
+}
+
+
+def siteUrl = 'https://github.com/tosslife/FoldingTabBar.Android'                    // #CONFIG# // project homepage
+def gitUrl = 'https://github.com/tosslife/FoldingTabBar.Android.git'                 // #CONFIG# // project git url
+def issueUrl = 'https://github.com/tosslife/FoldingTabBar.Android/issues'            // #CONFIG# // project issue url
+group = "com.github.tosslife"                                           // #CONFIG# // Maven Group ID for the artifact (pageckage name is ok)
+
+
+install {
+    repositories.mavenInstaller {
+        // generates POM.xml with proper parameters
+        pom {
+            project {
+                packaging 'aar'
+                name 'TabBarView'                             // #CONFIG# // project title
+                description 'folding tabbar menu for Android. This is a menu library.You can easily add a nice animated tab menu to your app.'
+                url siteUrl
+                // Set your license
+                licenses {
+                    license {
+                        name 'The Apache Software License, Version 2.0'
+                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+                developers {
+                    developer {
+                        id 'tosslife'                                  // #CONFIG# // your user id (you can write your nickname)
+                        name 'tosslife'                                       // #CONFIG# // your user name
+                        email 'tosslife@sanrenx.com'                      // #CONFIG# // your email
+                    }
+                }
+                scm {
+                    connection gitUrl
+                    developerConnection gitUrl
+                    url siteUrl
+                }
+            }
+        }
+    }
+}
+
+task sourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier = 'sources'
+}
+
+task javadoc(type: Javadoc) {
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
+artifacts {
+    archives javadocJar
+    archives sourcesJar
+}
+
+
+//bintray upload
+
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+bintray {
+    user = properties.getProperty("bintray.user")
+    key = properties.getProperty("bintray.apikey")
+    configurations = ['archives']
+    pkg {
+        repo = "maven"
+        name = "tabbarview"                                                   // #CONFIG# project name in jcenter
+        desc = 'folding tabbar menu for Android'
+        websiteUrl = siteUrl
+        vcsUrl = gitUrl
+        issueTrackerUrl = issueUrl
+        licenses = ["Apache-2.0"]
+        labels = ['android']
+        publish = true
+        publicDownloadNumbers = true
+    }
 }
