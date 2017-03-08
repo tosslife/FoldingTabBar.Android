@@ -147,6 +147,10 @@ public class TabBarView extends RelativeLayout implements View.OnClickListener, 
 	public void setMainBitmap(int mainBitmap) {
 		tabBackView.setMainBtnBitmap(mainBitmap);
 	}
+	
+	public void setTabPaintColor(int tabbarMainColor , int tabbarSecondColor , int tabbarBackgroundColor) {
+		tabBackView.setTabPaintColor(tabbarMainColor,tabbarSecondColor,tabbarBackgroundColor);
+	}
 
 	public void setSecondlyFirstBitmap(int secondlyFirstBitmap) {
 		tabBackView.setLeftBtnBitmap(secondlyFirstBitmap);
