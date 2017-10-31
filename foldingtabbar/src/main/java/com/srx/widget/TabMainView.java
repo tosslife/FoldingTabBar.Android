@@ -398,6 +398,15 @@ public class TabMainView extends View {
 	public void setOnAnimationEndListener(OnAnimationEndListener animationEndListener) {
 		this.animationEndListener = animationEndListener;
 	}
+	
+	public void setTabPaintColor(int tabbarMainColor , int tabbarSecondColor , int tabbarBackgroundColor ) {
+		
+		colors[0] = getResources().getColor(tabbarMainColor);
+		colors[1] = getResources().getColor(tabbarSecondColor);
+		colors[2] = getResources().getColor(tabbarBackgroundColor);
+		invalidate();
+		
+	}
 
 	public interface OnAnimationEndListener {
 		void onAnimationEnd();
